@@ -24,5 +24,6 @@ Route::get('/home', function () {
 
 Route::get('/users', [UserController::class, 'index']);
 
-Route::get('/users/{id}', [UserController::class, 'show']);
+Route::get('/users/{id}', [UserController::class, 'show'])
+    ->name('users.show');
 
