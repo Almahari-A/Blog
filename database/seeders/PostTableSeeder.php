@@ -19,6 +19,7 @@ class PostTableSeeder extends Seeder
         $a = new Post;
         $a-> image = "";
         $a-> caption = "Hello handsome";
+        $a-> user_id = 1;
         $a-> save();
 
         Post::factory()->count(24)->create();
