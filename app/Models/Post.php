@@ -14,5 +14,5 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
-    //protected $fillable = ['image','caption',];
+    protected $fillable = ['image','caption','user_id'];
 }
