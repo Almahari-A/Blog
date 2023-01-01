@@ -22,7 +22,8 @@ Route::get('/home', function () {
     return view('layouts.app');
 });
 
-Route::get('/users', [UserController::class, 'index']);
+Route::get('/users', [UserController::class, 'index'])
+    ->name('users.index');
 
 Route::get('/users/{id}', [UserController::class, 'show'])
     ->name('users.show');

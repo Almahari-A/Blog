@@ -13,5 +13,7 @@
             @yield('content')
         </div>
 
+        <a href={{ route('users.index') }}>Link to users</a>
+
     </body>
 </html>
