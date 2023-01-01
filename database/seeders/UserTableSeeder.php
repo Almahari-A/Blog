@@ -20,5 +20,7 @@ class UserTableSeeder extends Seeder
         $a-> email = "Ali@email.com";
         $a-> password = "Ali123";
         $a-> save();
+
+        User::factory()->count(14)->create();
     }
 }
