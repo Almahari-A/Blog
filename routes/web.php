@@ -18,6 +18,6 @@ Route::get('/', function () {
 });
 
 Route::get('/home', function () {
-    return 'Welcome to the home page';
+    return view('layouts.app');
 });
 
