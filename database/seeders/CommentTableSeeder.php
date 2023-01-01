@@ -18,6 +18,8 @@ class CommentTableSeeder extends Seeder
         //
         $a = new Comment;
         $a-> body = "Gratitude is beutiful";
+        $a-> user_id = 1;
+        $a-> post_id = 1;
         $a-> save();
 
         Comment::factory()->count(44)->create();
