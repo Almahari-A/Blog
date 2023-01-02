@@ -25,7 +25,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('posts.create');
     }
 
     /**
@@ -36,7 +36,15 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'image' => 'required|mimes:jpg,png,jpeg|max:5048',
+            'caption' => 'required', 
+        ]);
+
+        $newImageName = uniqid() . '-' . $request->title . '-' . 
+        $request->image->extension();
+
+        dd($newImageName);
     }
 
     /**
