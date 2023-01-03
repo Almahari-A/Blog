@@ -36,6 +36,12 @@
                     </div>
 
                     <div>
+                    @if (session('message'))
+                    <p><b>{{ session('message') }}</b></p>
+                    @endif
+                    </div>
+
+                    <div>
                     <a href={{ route('users.index') }}>Link to users</a>
                     </div>
 

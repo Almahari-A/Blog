@@ -4,12 +4,29 @@
 
 @section('content')
 
-    <p>The cool posts in Cool Blog</p>
-
-    <ul>
-        @foreach ($posts as $post)
-            <img src=" {{ $post->image }} "></img>
-        @endforeach
-    </ul>
+    <h4>The cool posts in Cool Blog</h4>
+        <div>
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>UserId</th>
+                        <th>Image</th>
+                        <th>Caption</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($posts as $post)
+                    <tr>
+                        <td>{{ $post->user_id }}</td>
+                        <td>
+                        <img src="{{asset('storage/'.$post->image)}}"/>
+                        <img src="{{asset($post->image)}}"/>
+                        </td>
+                        <td>{{ $post->caption}}</td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
 
 @endsection

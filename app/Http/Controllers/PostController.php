@@ -41,10 +41,18 @@ class PostController extends Controller
             'caption' => 'required', 
         ]);
 
-        $newImageName = uniqid() . '-' . $request->title . '-' . 
-        $request->image->extension();
+       $img = $request->file('image')->getClientOriginalName();
+       $path = $request->file('image')->storeAs('images',$img, 'public');
+       
+       Post::create([
+            'image' => $path,
+            'caption' => $request->input('caption'),
+            'user_id' => auth()->user()->id
+       ]);
 
-        dd($newImageName);
+       session()->flash('message', 'Post was created');
+
+       return redirect()->route('posts.index');
     }
 
     /**
