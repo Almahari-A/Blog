@@ -1,14 +1,12 @@
-@extends('layouts.app')
+<x-app-layout>
 
 @section('content')
 
-<div class="w-4/5 m-auto text-center">
-    <div class="py-15">
-        <h1 class="text-6xl">
-            Create Post
-        </h1>
-    </div>
-</div>
+<x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Create Cool Posts') }}
+        </h2>
+</x-slot>
 
 <div class="flex justify-center">
 
@@ -53,3 +51,5 @@
 </div>    
 
 @endsection
+
+</x-app-layout>
