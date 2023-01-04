@@ -41,15 +41,7 @@
                     @endif
                     </div>
 
-                    <div>
-                    <a href={{ route('users.index') }}>Link to users</a>
-                    </div>
-
-                    @if (Auth::check())
-                    <div>
-                    <a href={{ route('posts.create') }}>Create post</a>
-                    </div>
-                    @endif
+                    
 
                 </body>
 
