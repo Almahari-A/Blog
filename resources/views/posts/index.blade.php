@@ -1,10 +1,11 @@
-@extends('layouts.app')
-
-@section('title', 'Posts')
-
+<x-app-layout>
 @section('content')
 
-    <h4>The cool posts in Cool Blog</h4>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('The Cool Posts of CoolBlog') }}
+        </h2>
+    </x-slot>
         <div>
             <table class="table table-bordered table-striped">
                 <thead>
@@ -29,4 +30,9 @@
             </table>
         </div>
 
+        <div class="row d-flex justify-content-center">
+            <div class="col-auto space-x-2">{!! $posts->links() !!}</div>
+        </div>
+
 @endsection
+</x-app-layout>
