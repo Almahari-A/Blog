@@ -33,6 +33,10 @@
                 <body>
 
                     <div>
+                        @yield('content')
+                    </div>
+
+                    <div>
                     @if (session('message'))
                     <p><b>{{ session('message') }}</b></p>
                     @endif
