@@ -19,9 +19,6 @@
                 <div class="mt-2 space-x-2">
                   <span class="text-gray-500 font-medium">Created at date</span>
                     <button type="button" class="text-gray-900 font-medium">
-                      Reply
-                    </button>
-                    <button type="button" class="text-gray-900 font-medium">
                       Edit
                     </button>
                     <button type="button" class="text-gray-900 font-medium">
@@ -31,9 +28,6 @@
               </div>
             </div>
 
-            <div class="ml-14 mt-6">
-              Replies
-            </div>
           </div>
           {{-- End comment --}}
         </div>
