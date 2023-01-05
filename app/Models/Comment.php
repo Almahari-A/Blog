@@ -14,10 +14,15 @@ class Comment extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function post()
+    public function commentable()
     {
-        return $this->belongsTo(Post::class);
+        return $this->morphTo();
     }
 
-    protected $fillable = ['body','user_id','post_id',];
+    /*public function post()
+    {
+        return $this->belongsTo(Post::class);
+    }*/
+
+    protected $fillable = ['body','user_id',];
 }

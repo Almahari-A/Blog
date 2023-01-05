@@ -22,7 +22,7 @@ class CommentFactory extends Factory
             //
             'body' => fake()->text(),
             'user_id' => User::inRandomOrder()->first()->id,
-            'post_id' => Post::inRandomOrder()->first()->id,
+            //'post_id' => Post::inRandomOrder()->first()->id,
         ];
     }
 }

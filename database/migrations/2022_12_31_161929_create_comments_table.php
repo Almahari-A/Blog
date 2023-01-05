@@ -21,9 +21,11 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users')
             ->onDelete('cascade')->onUpdate('cascade');
 
-            $table->bigInteger('post_id')->unsigned();
+            /*$table->bigInteger('post_id')->unsigned();
             $table->foreign('post_id')->references('id')->on('posts')
-            ->onDelete('cascade')->onUpdate('cascade');
+            ->onDelete('cascade')->onUpdate('cascade');*/
+
+            $table->morphs('commentable');
 
             $table->timestamps();
         });
