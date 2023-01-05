@@ -12,6 +12,7 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <livewire:styles />
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
@@ -30,22 +31,17 @@
             <main>
                 
                 <body>
-                    
-                    <div>
-                        @yield('content')
-                    </div>
 
                     <div>
                     @if (session('message'))
                     <p><b>{{ session('message') }}</b></p>
                     @endif
-                    </div>
-
-                    
+                    </div> 
 
                 </body>
 
             </main>
         </div>
+        <livewire:scripts />
     </body>
 </html>
