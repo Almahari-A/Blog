@@ -15,7 +15,7 @@
           <thead class="border-b bg-gray-50">
             <tr>
               <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
-                UserId
+                User Name
               </th>
               <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
                 Image
@@ -29,13 +29,13 @@
           @foreach ($posts as $post)
             <tr class="bg-white border-b">
               <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                {{ $post->user_id }}
+                {{ $post->user->name }}
               </td>
               <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                <a href={{ route('posts.show', ['id' => $post -> id]) }}">
+                <a href="{{ route('posts.show', ['id' => $post -> id]) }}">
                     <img src="{{asset('storage/'.$post->image)}}"/>
                 </a>
-                <a href={{ route('posts.show', ['id' => $post -> id]) }}">
+                <a href="{{ route('posts.show', ['id' => $post -> id]) }}">
                     <img src="{{asset($post->image)}}"/>
                 </a>
               </td>
