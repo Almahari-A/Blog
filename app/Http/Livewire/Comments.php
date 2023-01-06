@@ -8,6 +8,8 @@ class Comments extends Component
 {
     public $model;
 
+    protected $listeners = ['refresh'=>'$refresh'];
+
     public $newCommentState = ['body' => ''];
 
     protected $validationAttributes = ['newCommentState.body' => 'comment'];
