@@ -11,11 +11,10 @@
     <div>
         <ul>
             @foreach ($users as $user)
-                <li><a href={{ route('users.show', ['id' => $user -> id]) }}">{{ $user->name }}</a></li>
+                <li><a href="{{ route('users.show', ['id' => $user -> id]) }}">{{ $user->name }}</a></li>
             @endforeach
         </ul>
     </div>
-    
 
     <div class="row d-flex justify-content-center">
         <div class="col-auto space-x-2">{!! $users->links() !!}</div>
