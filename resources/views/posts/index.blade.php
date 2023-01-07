@@ -23,6 +23,9 @@
               <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
                 Caption
               </th>
+              <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4">
+                Edit
+              </th>
             </tr>
           </thead class="border-b">
           <tbody>
@@ -33,14 +36,20 @@
               </td>
               <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                 <a href="{{ route('posts.show', ['id' => $post -> id]) }}">
-                    <img src="{{asset('storage/'.$post->image)}}"/>
+                    <img src="{{asset('storage/'.$post->image)}}" width="300"/>
                 </a>
-                <a href="{{ route('posts.show', ['id' => $post -> id]) }}">
+                <a href="{{ route('posts.show', ['id' => $post -> id]) }}" width="300">
                     <img src="{{asset($post->image)}}"/>
                 </a>
               </td>
               <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                 {{ $post->caption}}
+              </td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                @if (isset(Auth::user()->id) && 
+                Auth::user()->id == $post->user_id)
+                  <a href="{{ route('posts.edit',['id' => $post->id] )}}">Edit</a>
+                @endif
               </td>
             </tr>
             @endforeach

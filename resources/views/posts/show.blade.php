@@ -11,12 +11,26 @@
         <a href="#!">
             <img class="rounded-t-lg" src="{{asset($post->image)}}" width="500px" />
         </a>
+        <a href="#!">
+        <img src="{{asset('storage/'.$post->image)}} " width="500px" />
+        </a>
         <div class="p-6">
             <p class="text-gray-700 text-base mb-4">
                 Caption : {{ $post->caption}}
             </p>
         </div>
     </div>
+</div>
+<div>
+    @if (isset(Auth::user()->id) && 
+    Auth::user()->id == $post->user_id)
+    <form method="POST" 
+        action="{{ route('posts.destroy',['id' => $post->id] )}}">
+        @csrf 
+        @method('DELETE')
+        <button type="submit">Delete</button>
+    </form>
+    @endif
 </div>
 
 <div class="py-12">

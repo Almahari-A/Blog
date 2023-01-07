@@ -75,7 +75,8 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Post::findOrFail($id);
+        return view('posts.edit',['post' => $post]);
     }
 
     /**
@@ -87,7 +88,18 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'caption' => 'required', 
+        ]);
+       
+        Post::where('id', $id)
+            ->update([
+                'caption' => $request->input('caption'),
+            ]);
+
+       session()->flash('message', 'Post was created');
+
+       return redirect()->route('posts.index');
     }
 
     /**
