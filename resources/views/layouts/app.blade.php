@@ -29,7 +29,7 @@
 
             <!-- Page Content -->
             <main>
-            {{ $slot }}
+            
                 <body>
                     
                     <div class="py-12">
